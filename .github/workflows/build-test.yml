@@ -3,17 +3,17 @@ name: 🔨 Build Test
 on:
   pull_request:
     paths:
-      - '**.go'
-      - '**.mod'
+      - "**.go"
+      - "**.mod"
   workflow_dispatch:
     inputs:
       short:
-        description: 'Use -short flag for tests'
+        description: "Use -short flag for tests"
         required: false
         type: boolean
         default: false
 
-jobs:  
+jobs:
   build:
     name: Test Builds
     runs-on: ${{ matrix.os }}
@@ -51,6 +51,7 @@ jobs:
           HUNTER_API_KEY: ${{secrets.HUNTER_API_KEY}}
           INTELX_API_KEY: ${{secrets.INTELX_API_KEY}}
           LEAKIX_API_KEY: ${{secrets.LEAKIX_API_KEY}}
+          ODIN_API_KEY: ${{secrets.ODIN_API_KEY}}
           PASSIVETOTAL_API_KEY: ${{secrets.PASSIVETOTAL_API_KEY}}
           QUAKE_API_KEY: ${{secrets.QUAKE_API_KEY}}
           ROBTEX_API_KEY: ${{secrets.ROBTEX_API_KEY}}
